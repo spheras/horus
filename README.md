@@ -8,6 +8,8 @@ Monitoring, Management and Planning of Personnel involved in Search Actions in L
 
 ## Description
 
+![Horus ScreenShot](https://raw.githubusercontent.com/spheras/horus/master/etc/readme_assets/screenshots1.png)
+
 ## Architecture
 
 ## Building and Installing
