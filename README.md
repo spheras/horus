@@ -24,7 +24,7 @@ The systems currently used to monitor work and record information present a majo
 1. The work is being carried out in a hostile environment and many of the people carrying out field tasks are neither professionals nor trained in this type of work.
 1. The planned tasks are really being carried out correctly.
 
-**HORUS** is free tool that adapts to the needs of this type of situation, allowing an agile and effective follow-up of the work, and an organized record of the information that facilitates the analysis.
+**HORUS** is free [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) tool that adapts to the needs of this type of situation, allowing an agile and effective follow-up of the work, and an organized record of the information that facilitates the analysis.
 
 ![Horus ScreenShot](https://raw.githubusercontent.com/spheras/horus/master/etc/readme_assets/screenshots1.png)
 
