@@ -28,6 +28,25 @@ The systems currently used to monitor work and record information present a majo
 
 ![Horus ScreenShot](https://raw.githubusercontent.com/spheras/horus/master/etc/readme_assets/screenshots1.png)
 
+## Aims and Objectives
+
+From a __functional__ point of view:
+
+- [x] To increase the safety of the participants.
+- [x] Facilitate search management.
+- [x] Follow up tasks.
+- [x] Track resources in real time.
+- [x] Facilitate coordination.
+- [x] Facilitate the planning and probability of success of future searches.
+
+From a __technological__ perspective:
+
+- [x] To be a free and specifically designed tool for the management, coordination and planning of searches in large areas.
+- [x] Mobile application with RTLS system.
+- [x] Desktop application with a GIS viewer from which to track.
+- [x] Spatial database to store spatial information generated.
+
+
 ## Architecture
 
 ## Building and Installing
