@@ -1,0 +1,102 @@
+<h1 *ngIf="flagEdit" mat-dialog-title>
+    <mat-icon class="icon">edit</mat-icon>{{'EDITUSER.EDIT_TITLE' | translate}}
+</h1>
+<h1 *ngIf="!flagEdit" mat-dialog-title>
+    <mat-icon class="icon">person_add</mat-icon>{{'EDITUSER.CREATE_TITLE' | translate}}
+</h1>
+<div mat-dialog-content>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <mat-card class="animated fadeInUp">
+            <mat-card-header></mat-card-header>
+            <mat-card-content>
+                <table cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput formControlName="username" placeholder="{{'EDITUSER.FIELD.USERNAME' | translate}}"
+                                    name="username" required [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+                                    mt-autofocus [value]="editUser.username">
+                            </mat-form-field>
+                            <mat-error *ngIf="userForm.controls.username.hasError('required')">{{'EDITUSER.REQUIRED.USERNAME'
+                                |
+                                translate}}</mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput type="password" formControlName="password" placeholder="{{'EDITUSER.FIELD.PASSWORD' | translate}}"
+                                    name="password" required [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                    mt-autofocus [value]="editUser.hpassword">
+                            </mat-form-field>
+                            <mat-error *ngIf="userForm.controls.password.hasError('required')">{{'EDITUSER.REQUIRED.PASSWORD'
+                                |
+                                translate}}</mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput type="password" formControlName="confirmpass" placeholder="{{'EDITUSER.FIELD.CONFIRMPASSWORD' | translate}}"
+                                    name="confirmpass" required [ngClass]="{ 'is-invalid': submitted && f.confirmpass.errors }"
+                                    mt-autofocus [value]="editUser.hpassword" [errorStateMatcher]="matcher">
+                            </mat-form-field>
+                            <mat-error *ngIf="userForm.hasError('notSame')">{{'EDITUSER.ERROR.PASSWORD' | translate}}</mat-error>
+                            <mat-error *ngIf="!userForm.hasError('notSame') && userForm.controls.confirmpass.hasError('required')">{{'EDITUSER.REQUIRED.PASSWORD'
+                                |
+                                translate}}</mat-error>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput formControlName="email" placeholder="{{'EDITUSER.FIELD.EMAIL' | translate}}"
+                                    name="email" required [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                                    mt-autofocus [value]="editUser.email">
+                            </mat-form-field>
+                            <mat-error *ngIf="userForm.controls.email.hasError('required')">{{'EDITUSER.REQUIRED.EMAIL'
+                                |
+                                translate}}</mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput formControlName="description" placeholder="{{'EDITUSER.FIELD.DESCRIPTION' | translate}}"
+                                    name="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"
+                                    mt-autofocus [value]="editUser.description">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <mat-select placeholder="{{'EDITUSER.FIELD.ROLE' | translate}}" formControlName="role"
+                                    name="role" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" [value]="editUser.role"
+                                    required>
+                                    <mat-option [value]="'USER'">USER</mat-option>
+                                    <mat-option *ngIf="currentUser.role=='ADMIN'" [value]="'ADMIN'">ADMIN</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-error *ngIf="userForm.controls.role.hasError('required')">{{'EDITUSER.REQUIRED.ROLE'
+                                |
+                                translate}}</mat-error>
+                        </td>
+                    </tr>
+
+                </table>
+                <mat-spinner [style.display]="
+                                    showSpinner ? 'block' : 'none'"></mat-spinner>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-stroked-button color="warn" (click)="save()">{{'EDITUSER.SAVE' | translate}}</button>
+    <div class="button-filler"></div>
+    <button mat-stroked-button color="primary" class="cancel" [mat-dialog-close]="false" cdkFocusInitial>{{'EDITUSER.CANCEL'
+        | translate}}</button>
+</div>

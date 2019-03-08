@@ -1,0 +1,31 @@
+{
+    "WELCOME.TITLE": "Welcome to Horus",
+    "WELCOME.TEXT1": "While this application is active it will send all the route that you make to the central services to trace the search that is being carried out.",
+    "WELCOME.TEXT2": "To start click on the next button and scan the code of the group you belong to.",
+
+    "DIALOG.WAIT":"Please Wait...",
+
+    "HOME.GROUP":"Group",
+    "HOME.TEXT1":"From this moment on your device is synchronizing the position for the GROUP",
+    "HOME.EXIT.TITLE":"Confirm Exit",
+    "HOME.EXIT.DESCRIPTION":"Are you sure to FINISH the Search? When finish the search, your device will STOP sending data to the server.",
+    "HOME.EXIT.CANCEL":"Cancel",
+    "HOME.EXIT.EXIT":"Exit",
+    "HOME.ACTION.SENDPICTURE":"Make a Picture",
+    "HOME.ACTION.SENDCOMMENT":"Send a Comment",
+    "HOME.ACTION.CALLBASE":"Phone Call to Base",
+    "HOME.ACTION.ENDTRACKING":"End Search",
+    "HOME.DIALOG.PHONENUMBER.TITLE":"Phone Number",
+    "HOME.DIALOG.PHONENUMBER.SUBTITLE":"Please, enter YOUR phone number.  It is necessary to establish a communication with you in case of need.",
+    "HOME.DIALOG.PHONENUMBER.PLACEHOLDER":"Número de Teléfono",
+    "HOME.DIALOG.PHONENUMBER.CANCEL":"Cancelar",
+    "HOME.DIALOG.PHONENUMBER.OK":"Ok",
+    "HOME.DIALOG.PHOTO.COMMENTS.TITLE":"Description",
+    "HOME.DIALOG.PHOTO.COMMENTS.SUBTITLE":"Add a description of the photo",
+    "HOME.DIALOG.PHOTO.COMMENTS.PLACEHOLDER":"Photo Description",
+    "HOME.DIALOG.PHOTO.COMMENTS.OK":"Ok",
+    "HOME.DIALOG.COMMENTS.TITLE":"Comments",
+    "HOME.DIALOG.COMMENTS.SUBTITLE":"Put the comment you want to send",
+    "HOME.DIALOG.COMMENTS.PLACEHOLDER":"Comment",
+    "HOME.DIALOG.COMMENTS.OK":"Ok"
+}

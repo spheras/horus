@@ -1,0 +1,198 @@
+<h1 *ngIf="flagEdit" mat-dialog-title>
+    <mat-icon class="icon">edit</mat-icon>{{'EDITSEARCH.EDIT_TITLE' | translate}}
+</h1>
+<h1 *ngIf="!flagEdit" mat-dialog-title>
+    <mat-icon class="icon">add</mat-icon>{{'EDITSEARCH.CREATE_TITLE' | translate}}
+</h1>
+<div mat-dialog-content>
+
+    <mat-vertical-stepper (animationDone)="groupsection.presave();areasection.presave();linksection.presave();" linear
+        #stepper>
+        <mat-step [stepControl]="searchForm">
+
+            <form [formGroup]="searchForm">
+                <ng-template matStepLabel>{{'EDITSEARCH.STEP.BASIC' | translate}}</ng-template>
+
+                <table class="formtable" cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput formControlName="name" placeholder="{{'EDITSEARCH.FIELD.NAME' | translate}}"
+                                    name="name" required [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+                                    mt-autofocus [value]="editSearch.name">
+                            </mat-form-field>
+                            <mat-error *ngIf="searchForm.controls.name.hasError('required')">{{'EDITSEARCH.REQUIRED.NAME'
+                                |
+                                translate}}</mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="creation" formControlName="creation" placeholder="{{'EDITSEARCH.FIELD.CREATION' | translate}}"
+                                    name="creation" required [ngClass]="{ 'is-invalid': submitted && f.creation.errors }"
+                                    mt-autofocus [formControl]="searchForm.controls.creation">
+                                <mat-datepicker-toggle matSuffix [for]="creation"></mat-datepicker-toggle>
+                                <mat-datepicker #creation disabled="false"></mat-datepicker>
+                            </mat-form-field>
+                            <mat-error *ngIf="searchForm.controls.creation.hasError('required')">{{'EDITSEARCH.REQUIRED.CREATION'
+                                |
+                                translate}}</mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput formControlName="description" placeholder="{{'EDITSEARCH.FIELD.DESCRIPTION' | translate}}"
+                                    name="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"
+                                    mt-autofocus [value]="editSearch.description">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput formControlName="location" placeholder="{{'EDITSEARCH.FIELD.LOCATION' | translate}}"
+                                    name="location" [ngClass]="{ 'is-invalid': submitted && f.location.errors }"
+                                    mt-autofocus [value]="editSearch.location">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input #contactphone matInput type="tel" formControlName="contactphone" placeholder="{{'EDITSEARCH.FIELD.CONTACTPHONE' | translate}}"
+                                    name="contactphone" [ngClass]="{ 'is-invalid': submitted && f.contactphone.errors }"
+                                    mt-autofocus [value]="editSearch.contactPhone" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="searchForm.controls.contactphone.hasError('required')">{{'EDITSEARCH.REQUIRED.CONTACTPHONE'
+                                |
+                                translate}}</mat-error>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="chip-list">
+                                <mat-chip-list #chipList>
+                                    <mat-chip *ngFor="let tag of tags" (removed)="removeTag(tag)" [selectable]="false"
+                                        [removable]="true">
+                                        {{tag}}
+                                        <mat-icon matChipRemove>cancel</mat-icon>
+                                    </mat-chip>
+                                    <input placeholder="{{'EDITSEARCH.FIELD.TAGS' | translate}}" #fruitInput
+                                        [formControl]="searchForm.controls.tags" [matChipInputFor]="chipList"
+                                        (matChipInputTokenEnd)="addTag($event)" [matChipInputAddOnBlur]="true"
+                                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes">
+                                </mat-chip-list>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput [pattern]="latlongRegex" formControlName="forwardCommandPost"
+                                    placeholder="{{'EDITSEARCH.FIELD.FORWARDCOMMANDPOST' | translate}}" name="forwardCommandPost"
+                                    [ngClass]="{ 'is-invalid': submitted && f.forwardCommandPost.errors }" mt-autofocus
+                                    [value]="parseGEOJSON(editSearch.forwardCommandPost)">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput [pattern]="latlongRegex" formControlName="lastPointSighting"
+                                    placeholder="{{'EDITSEARCH.FIELD.LASTPOINTSIGHTING' | translate}}" name="lastPointSighting"
+                                    [ngClass]="{ 'is-invalid': submitted && f.lastPointSighting.errors }" mt-autofocus
+                                    [value]="parseGEOJSON(editSearch.lastPointSighting)">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="lastPointSightingDate" formControlName="lastPointSightingDate"
+                                    placeholder="{{'EDITSEARCH.FIELD.LASTPOINTSIGHTINGDATE' | translate}}" name="lastPointSightingDate"
+                                    required [ngClass]="{ 'is-invalid': submitted && f.lastPointSightingDate.errors }"
+                                    mt-autofocus [formControl]="searchForm.controls.lastPointSightingDate">
+                                <mat-datepicker-toggle matSuffix [for]="lastPointSightingDate"></mat-datepicker-toggle>
+                                <mat-datepicker #lastPointSightingDate disabled="false"></mat-datepicker>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput [pattern]="latlongRegex" formControlName="locationPointMissingPerson"
+                                    placeholder="{{'EDITSEARCH.FIELD.LOCATIONPOINTMISSINGPERSON' | translate}}" name="locationPointMissingPerson"
+                                    [ngClass]="{ 'is-invalid': submitted && f.locationPointMissingPerson.errors }" mt-autofocus
+                                    [value]="parseGEOJSON(editSearch.locationPointMissingPerson)">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput [pattern]="latlongRegex" formControlName="lastKnownPosition"
+                                    placeholder="{{'EDITSEARCH.FIELD.LASTKNOWNPOSITION' | translate}}" name="lastKnownPosition"
+                                    [ngClass]="{ 'is-invalid': submitted && f.lastKnownPosition.errors }" mt-autofocus
+                                    [value]="parseGEOJSON(editSearch.lastKnownPosition)">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput [pattern]="latlongRegex" formControlName="initialPlanningPoint"
+                                    placeholder="{{'EDITSEARCH.FIELD.INITIALPLANNINGPOINT' | translate}}" name="initialPlanningPoint"
+                                    [ngClass]="{ 'is-invalid': submitted && f.initialPlanningPoint.errors }" mt-autofocus
+                                    [value]="parseGEOJSON(editSearch.initialPlanningPoint)">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                                    cdkAutosizeMinRows="2" cdkAutosizeMaxRows="10" formControlName="report" placeholder="{{'EDITSEARCH.FIELD.REPORT' | translate}}"
+                                    name="report" [ngClass]="{ 'is-invalid': submitted && f.report.errors }"
+                                    mt-autofocus [value]="editSearch.report"></textarea>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+                <button class="button next" mat-button matStepperNext>{{'EDITSEARCH.STEP.NEXT' | translate}} &gt;&gt;</button>
+            </form>
+
+        </mat-step>
+        <mat-step [stepControl]="groupsection.form">
+            <ng-template matStepLabel>{{'EDITSEARCH.STEP.GROUPS' | translate}}</ng-template>
+            <groupsection #groupsection [defaultContactPhone]="contactphone.value" [linksection]="linksection"></groupsection>
+            <button class="button prev" mat-button matStepperPrevious>&lt;&lt; {{'EDITSEARCH.STEP.BACK' | translate}}</button>
+            <button class="button next" mat-button matStepperNext>{{'EDITSEARCH.STEP.NEXT' | translate}} &gt;&gt;</button>
+        </mat-step>
+        <mat-step [stepControl]="areasection.form">
+            <ng-template matStepLabel>{{'EDITSEARCH.STEP.AREAS' | translate}}</ng-template>
+            <areasection #areasection [linksection]="linksection"></areasection>
+            <button class="button prev" mat-button matStepperPrevious>&lt;&lt; {{'EDITSEARCH.STEP.BACK' | translate}}</button>
+            <button class="button next" mat-button matStepperNext>{{'EDITSEARCH.STEP.NEXT' | translate}} &gt;&gt;</button>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>{{'EDITSEARCH.STEP.LINKS' | translate}}</ng-template>
+            <linksection [groups]="groupsection.data" [areas]="areasection.data" #linksection></linksection>
+            <button class="button prev" mat-button matStepperPrevious>&lt;&lt; {{'EDITSEARCH.STEP.BACK' | translate}}</button>
+            <button class="button next" mat-button matStepperNext>{{'EDITSEARCH.STEP.NEXT' | translate}} &gt;&gt;</button>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>{{'EDITSEARCH.STEP.DONE' | translate}}</ng-template>
+            {{'EDITSEARCH.DONE' | translate}}
+            <div mat-dialog-actions>
+                <button mat-stroked-button color="warn" (click)="save()">{{'EDITUSER.SAVE' | translate}}</button>
+                <div class="button-filler"></div>
+                <button mat-stroked-button color="primary" class="cancel" [mat-dialog-close]="false" cdkFocusInitial>{{'EDITUSER.CANCEL'
+                    | translate}}</button>
+            </div>
+        </mat-step>
+    </mat-vertical-stepper>
+</div>

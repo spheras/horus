@@ -1,0 +1,42 @@
+<form [formGroup]="form">
+    <div>
+        <button class="add" mat-mini-fab color="accent" (click)="onCreateArea()" matTooltip="{{'AREAS.BUTTON.ADD' | translate}}">
+            <mat-icon class="menu-icon">add</mat-icon>
+        </button>
+        <mat-form-field class="filter">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{'AREAS.FILTER' | translate}}">
+        </mat-form-field>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" formArrayName="areas" matSort class="mat-elevation-z8 areaTable">
+        <!-- Row definitions -->
+        <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+        <tr mat-row *matRowDef="let row; let i = index; columns: displayColumns;"></tr>
+
+        <!-- Column definitions -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'AREAS.TABLE.NAME' | translate}} </th>
+            <td mat-cell *matCellDef="let row; let index = index" [formGroupName]="index" class="areatable">
+                <rowactions [class.editing]="row.flagEditing" [showEdit]="!row.flagEditing" (onDelete)="onDeleteArea(row.sid,index)"
+                    (onEdit)="onEditArea(row.sid,row)"></rowactions>
+                <span *ngIf="!row.flagEditing">{{row.name}}</span>
+                <mat-form-field *ngIf="row.flagEditing">
+                    <input matInput placeholder="{{'AREAS.TABLE.NAME' | translate}}" class="inputnew" type="text"
+                        [ngClass]="{ 'is-invalid': submitted && f.name.errors }" formControlName="name" [value]="row.name"
+                        required mt-autofocus>
+                </mat-form-field>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'AREAS.TABLE.DESCRIPTION' | translate}} </th>
+            <td mat-cell *matCellDef="let row; let index = index" [formGroupName]="index" class="grouptable">
+                <span *ngIf="!row.flagEditing">{{row.description}}</span>
+                <mat-form-field *ngIf="row.flagEditing">
+                    <input matInput placeholder="{{'AREAS.TABLE.DESCRIPTION' | translate}}" class="inputnew" type="text"
+                        [ngClass]="{ 'is-invalid': submitted && f.description.errors }" formControlName="description"
+                        [value]="row.description" mt-autofocus>
+                </mat-form-field>
+            </td>
+        </ng-container>
+    </table>
+</form>

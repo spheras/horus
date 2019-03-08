@@ -1,0 +1,23 @@
+<ion-content class="homepage" padding>
+
+  <div class="logocontainer">
+    <div class="logo"></div>
+    <span class="horus">HORUS</span>
+  </div>
+  <div class="content">
+    <h1>{{'HOME.GROUP' | translate}} {{group.name}}</h1>
+    <p>{{'HOME.TEXT1' | translate}} '{{group.name}}'</p>
+    <!--
+    <p>DEBUG - Api URL: {{group.apiurl}}</p>
+    <p>DEBUG - pass: {{group.hpassword}}</p>
+    -->
+
+    <button ion-button (click)="sendTest()">DEBUG - Enviar Datos Prueba</button>
+    <button ion-button (click)="sendPicture()">{{'HOME.ACTION.SENDPICTURE' | translate}}</button>
+    <button ion-button (click)="sendComment()">{{'HOME.ACTION.SENDCOMMENT' | translate}}</button>
+    <button ion-button (click)="callBase()">{{'HOME.ACTION.CALLBASE' | translate}}</button>
+    <button ion-button (click)="stopTracking()">{{'HOME.ACTION.ENDTRACKING' | translate}}</button>
+  </div>
+
+
+</ion-content>

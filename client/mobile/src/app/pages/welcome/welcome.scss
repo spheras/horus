@@ -1,0 +1,59 @@
+.welcomepage {
+    background: linear-gradient(to bottom, #6278a0 0%, #c1cddc 100%);
+    h1 {
+        text-align: center;
+        font-weight: bold;
+        width: 80%;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.11);
+    }
+    h1:after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 21px;
+        float: right;
+        border-right: 2px solid #153477;
+        border-top: 2px solid #153477;
+        border-bottom: 2px solid #153477;
+        margin-top: 4px;
+    }
+    h1:before {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 21px;
+        float: left;
+        border-left: 2px solid #153477;
+        border-top: 2px solid #153477;
+        border-bottom: 2px solid #153477;
+        margin-top: 4px;
+    }
+    .logo {
+        background: url(/assets/imgs/horus.svg);
+        width: 80%;
+        height: 200px;
+        margin: auto;
+        background-size: 100% 100%;
+    }
+    button.scan {
+        box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    button.scan:active {
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+    button.scan ion-icon {
+        font-size: 4rem !important;
+    }
+    .content {
+        text-align: justify;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        margin: 10px;
+        box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+        color: #153477;
+    }
+}

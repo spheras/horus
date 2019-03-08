@@ -1,0 +1,14 @@
+<ion-content *ngIf="!flagCameraActive" class="welcomepage" padding>
+
+    <div class="logo"></div>
+
+    <div class="content">
+        <h1>{{'WELCOME.TITLE' | translate}}</h1>
+        <p>{{'WELCOME.TEXT1' | translate}}</p>
+        <p>{{'WELCOME.TEXT2' | translate}}</p>
+
+        <button ion-fab class="scan" (click)="scanOnclick()">
+            <ion-icon name="camera"></ion-icon>
+        </button>
+    </div>
+</ion-content>

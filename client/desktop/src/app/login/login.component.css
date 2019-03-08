@@ -1,0 +1,78 @@
+.logo {
+    width: 127px;
+    height: 120px;
+    display: block;
+    background: url(/assets/img/horus.svg);
+    background-size: 127px;
+    margin: auto;
+    margin-bottom: 26px;
+}
+
+.parent {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    width: 100%;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d6d6d6+0,888888+100;Black+3D */
+    background: #d6d6d6;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #d6d6d6 0%, #888888 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #d6d6d6 0%, #888888 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #d6d6d6 0%, #888888 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#888888', GradientType=0);
+    /* IE6-9 */
+}
+
+.version {
+    position: absolute;
+    right: 5px;
+    bottom: 3px;
+    font-size: 10px;
+    color: #AAAAAA;
+}
+
+.icon {
+    font-size: 100px;
+    width: 100px;
+    height: 100px;
+    color: #AAAAAA;
+    position: absolute;
+}
+
+.headertext {
+    text-align: center;
+    margin-top: -24px;
+    color: #153477;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.prefix {
+    color: #AAAAAA;
+}
+
+.logocard {
+    max-width: 250px;
+    margin: 0 auto;
+    box-shadow: 0 0px 11px 3px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12) !important;
+}
+
+.invalid-feedback {
+    font-size: 10px;
+    margin-top: -16px;
+    color: red;
+}
+
+.loginbutton {
+    margin: auto !important;
+    display: block;
+    margin-top: -5px !important;
+}

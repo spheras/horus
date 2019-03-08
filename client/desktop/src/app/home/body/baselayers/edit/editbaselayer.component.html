@@ -1,0 +1,126 @@
+<h1 *ngIf="flagEdit" mat-dialog-title>
+    <mat-icon class="icon">edit</mat-icon>{{'EDITBASELAYER.EDIT_TITLE' | translate}}
+</h1>
+<h1 *ngIf="!flagEdit" mat-dialog-title>
+    <mat-icon class="icon">add</mat-icon>{{'EDITBASELAYER.CREATE_TITLE' | translate}}
+</h1>
+<div mat-dialog-content>
+
+    <form [formGroup]="baseLayerForm" (ngSubmit)="onSubmit()">
+        <mat-card class="animated fadeInUp">
+            <mat-card-header></mat-card-header>
+            <mat-card-content>
+                <table cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput formControlName="name" placeholder="{{'EDITBASELAYER.FIELD.NAME' | translate}}"
+                                    name="name" required [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+                                    mt-autofocus [value]="editBaseLayer.name">
+                            </mat-form-field>
+                            <mat-error *ngIf="baseLayerForm.controls.name.hasError('required')">{{'EDITBASELAYER.REQUIRED.NAME'
+                                |
+                                translate}}</mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput formControlName="description" placeholder="{{'EDITBASELAYER.FIELD.DESCRIPTION' | translate}}"
+                                    name="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"
+                                    mt-autofocus [value]="editBaseLayer.description">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput formControlName="url" placeholder="{{'EDITBASELAYER.FIELD.URL' | translate}}"
+                                    name="url" required [ngClass]="{ 'is-invalid': submitted && f.url.errors }"
+                                    mt-autofocus [value]="editBaseLayer.url">
+                            </mat-form-field>
+                            <mat-error *ngIf="baseLayerForm.controls.name.hasError('required')">{{'EDITBASELAYER.REQUIRED.URL'
+                                |
+                                translate}}</mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput formControlName="layers" placeholder="{{'EDITBASELAYER.FIELD.LAYERS' | translate}}"
+                                    name="layers" [ngClass]="{ 'is-invalid': submitted && f.layers.errors }"
+                                    mt-autofocus [value]="editBaseLayer.layers">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput formControlName="format" placeholder="{{'EDITBASELAYER.FIELD.FORMAT' | translate}}"
+                                    name="format" [ngClass]="{ 'is-invalid': submitted && f.format.errors }"
+                                    mt-autofocus [value]="editBaseLayer.format">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="zoomCont">
+                                <div class="minZoom">
+                                    <mat-form-field>
+                                        <input type="number" matInput formControlName="minZoom" placeholder="{{'EDITBASELAYER.FIELD.MINZOOM' | translate}}"
+                                            name="minZoom" required [ngClass]="{ 'is-invalid': submitted && f.minZoom.errors }"
+                                            mt-autofocus [value]="editBaseLayer.minZoom">
+                                    </mat-form-field>
+                                    <mat-error *ngIf="baseLayerForm.controls.name.hasError('required')">{{'EDITBASELAYER.REQUIRED.MINZOOM'
+                                        |
+                                        translate}}</mat-error>
+                                </div>
+                                <div class="maxZoom">
+                                    <mat-form-field>
+                                        <input type="number" matInput formControlName="maxZoom" placeholder="{{'EDITBASELAYER.FIELD.MAXZOOM' | translate}}"
+                                            name="maxZoom" required [ngClass]="{ 'is-invalid': submitted && f.maxZoom.errors }"
+                                            mt-autofocus [value]="editBaseLayer.maxZoom">
+                                    </mat-form-field>
+                                    <mat-error *ngIf="baseLayerForm.controls.name.hasError('required')">{{'EDITBASELAYER.REQUIRED.MAXZOOM'
+                                        |
+                                        translate}}</mat-error>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput formControlName="attribution" placeholder="{{'EDITBASELAYER.FIELD.ATTRIBUTION' | translate}}"
+                                    name="attribution"  [ngClass]="{ 'is-invalid': submitted && f.attribution.errors }"
+                                    mt-autofocus [value]="editBaseLayer.attribution">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-checkbox formControlName="transparent" name="transparent" [value]="editBaseLayer.transparent"
+                                [ngClass]="{ 'is-invalid': submitted && f.transparent.errors }">{{'EDITBASELAYER.FIELD.TRANSPARENT'
+                                | translate}}</mat-checkbox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-checkbox formControlName="continousWorld" name="continousWorld" [value]="editBaseLayer.continousWorld"
+                                [ngClass]="{ 'is-invalid': submitted && f.continousWorld.errors }">{{'EDITBASELAYER.FIELD.CONTINOUSWORLD'
+                                | translate}}</mat-checkbox>
+                        </td>
+                    </tr>
+                </table>
+                <mat-spinner [style.display]="
+                                    showSpinner ? 'block' : 'none'"></mat-spinner>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-stroked-button color="warn" (click)="save()">{{'EDITUSER.SAVE' | translate}}</button>
+    <div class="button-filler"></div>
+    <button mat-stroked-button color="primary" class="cancel" [mat-dialog-close]="false" cdkFocusInitial>{{'EDITUSER.CANCEL'
+        | translate}}</button>
+</div>

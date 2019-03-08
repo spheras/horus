@@ -1,0 +1,6 @@
+<div class="actions">
+    <mat-icon class="first" matTooltip="{{'ROWACTION.REMOVE.TOOLTIP' | translate}}" (click)="delete()">delete</mat-icon>
+    <mat-icon *ngIf="showEdit" class="last" matTooltip="{{'ROWACTION.EDIT.TOOLTIP' | translate}}" (click)="edit()">create</mat-icon>
+    <mat-icon *ngIf="showMapFlag" class="first bottom" matTooltip="{{'ROWACTION.MAP.TOOLTIP' | translate}}" (click)="showMap()">location_on</mat-icon>
+    <mat-icon *ngIf="showMapFlag" class="last bottom" matTooltip="{{'ROWACTION.QR.TOOLTIP' | translate}}" (click)="showQR()">gradient</mat-icon>
+</div>

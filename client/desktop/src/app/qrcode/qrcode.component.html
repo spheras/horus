@@ -1,0 +1,8 @@
+<div class="background">
+    <h1>{{'QRCODE.TITLE' | translate}} '{{searchname}}'</h1>
+    <h2>{{'QRCODE.SUBTITLE' | translate}}</h2>
+    <mat-card *ngFor="let group of groups" class="listcard">
+        <h2>{{group.name}}</h2>
+        <ngx-qrcode qrc-element-type="url" [qrc-value]="group.json"></ngx-qrcode>
+    </mat-card>
+</div>

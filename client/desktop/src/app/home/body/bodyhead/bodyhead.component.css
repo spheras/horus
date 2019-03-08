@@ -1,0 +1,36 @@
+.content-header {
+    /*background: url(/assets/img/congruent_pentagon.png), #00519b;*/
+    background: linear-gradient(to bottom, #00000061 0%, #fafafa 100%), url(/assets/img/stripes-light.png);
+    padding: 35px;
+    color: #153477;
+}
+
+.content-header .icon {
+    font-size: 100px;
+    line-height: 90px;
+    height: 90px;
+    width: 500px;
+    margin: auto;
+    display: block;
+    margin-top: -28px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.content-header h4 {
+    font-size: 20px;
+    max-width: 580px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: roboto;
+    font-weight: bold;
+}
+
+span {
+    margin: auto;
+    display: block;
+    text-align: center;
+    font-family: roboto;
+    opacity: 0.8;
+}

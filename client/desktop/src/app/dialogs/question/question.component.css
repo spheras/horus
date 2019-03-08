@@ -1,0 +1,20 @@
+h1 {
+    margin-left: -24px;
+    margin-right: -24px;
+    margin-top: -24px;
+    padding: 10px;
+    background: #365aa7;
+    color: white;
+}
+
+:host {
+    font-family: roboto;
+}
+
+.cancel {
+    margin-left: 20px;
+}
+
+mat-icon {
+    float: right;
+}

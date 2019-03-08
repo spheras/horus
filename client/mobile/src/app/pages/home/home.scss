@@ -1,0 +1,77 @@
+.homepage {
+    background: linear-gradient(to bottom, #6278a0 0%, #c1cddc 100%);
+    h1 {
+        text-align: center;
+        font-weight: bold;
+        width: 80%;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.11);
+    }
+    h1:after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 21px;
+        float: right;
+        border-right: 2px solid #153477;
+        border-top: 2px solid #153477;
+        border-bottom: 2px solid #153477;
+        margin-top: 4px;
+    }
+    h1:before {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 21px;
+        float: left;
+        border-left: 2px solid #153477;
+        border-top: 2px solid #153477;
+        border-bottom: 2px solid #153477;
+        margin-top: 4px;
+    }
+    .logocontainer {
+        width: 100%;
+        height: 48px;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 10%, rgba(0, 0, 0, 0) 80%);
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 28px;
+        .logo {
+            background: url(/assets/imgs/horus.svg);
+            width: 50px;
+            height: 50px;
+            background-size: 100% 100%;
+            float: left;
+            margin-top: -1px;
+        }
+        span {
+            float: left;
+            line-height: 50px;
+            font-size: 4rem;
+            font-family: roboto;
+            font-weight: bold;
+            color: #153477;
+            z-index: 0;
+            margin-left: 10px;
+        }
+    }
+    button.scan {
+        box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    button.scan:active {
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+    button.scan ion-icon {
+        font-size: 4rem !important;
+    }
+    .content {
+        text-align: justify;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        margin: 10px;
+        box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+        color: #153477;
+    }
+}

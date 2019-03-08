@@ -1,0 +1,50 @@
+<navbar #navbar [sideNav]="sidenav" [selected]="selected"></navbar>
+
+<div class="content">
+    <div class="fakenavbar"></div>
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #sidenav mode="side" class="mat-elevation-z6" [opened]="false" [fixedInViewport]="true"
+            [fixedTopGap]="55">
+
+            <div class="menu-head">
+                <mat-icon class="picture">person</mat-icon>
+                <div class="username">{{currentUser.username}}</div>
+                <div class="email">{{currentUser.email}}</div>
+            </div>
+            <mat-nav-list>
+                <mat-divider></mat-divider>
+                <mat-list-item [class.selected]="selected=='searches'" (click)="selected='searches'">
+                    <mat-icon class="menu-icon">transfer_within_a_station</mat-icon>
+                    <span class="menu-title">{{'LEFTMENU.SEARCHES' | translate}}</span>
+                </mat-list-item>
+                <mat-list-item class="selected submenu" *ngIf="selected=='map'">
+                    <mat-icon class="menu-icon submenu">place</mat-icon>
+                    <span class="menu-title">{{'LEFTMENU.SEARCH' | translate}}</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item [class.selected]="selected=='users'" (click)="selected='users'">
+                    <mat-icon class="menu-icon">people</mat-icon>
+                    <span class="menu-title">{{'LEFTMENU.USERS' | translate}}</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item [class.selected]="selected=='baselayers'" (click)="selected='baselayers'">
+                    <mat-icon class="menu-icon">layers</mat-icon>
+                    <span class="menu-title">{{'LEFTMENU.BASELAYERS' | translate}}</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item [class.selected]="selected=='settings'" (click)="selected='settings'">
+                    <mat-icon class="menu-icon">settings</mat-icon>
+                    <span class="menu-title">{{'LEFTMENU.SETTINGS' | translate}}</span>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content [class.map]="selected=='map'" class="animated fadeInUp" fixedInViewport="true" fullscreen>
+            <searches *ngIf="selected=='searches'" (onShowMap)="showMap($event)"></searches>
+            <users *ngIf="selected=='users'"></users>
+            <settings *ngIf="selected=='settings'"></settings>
+            <baselayers *ngIf="selected=='baselayers'"></baselayers>
+            <map *ngIf="selected=='map'" [navbar]="navbar" [search]="selectedSearch"></map>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

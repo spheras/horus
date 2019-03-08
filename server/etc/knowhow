@@ -1,0 +1,38 @@
+install docker postgis
+·······················
+
+docker run --name some-postgis -e POSTGRES_PASSWORD=mysecretpassword -d mdillon/postgis
+docker run -it --link some-postgis:postgres --rm postgres     sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres'
+
+run docker postgis
+··················
+docker run -d -p 5432:5432 mdillon/postgis
+
+
+Database Schema
+···············
+DROP DATABASE IF EXISTS horus;
+CREATE DATABASE horus;
+CREATE USER horus WITH ENCRYPTED PASSWORD 'horus';
+GRANT ALL PRIVILEGES ON DATABASE horus TO horus;
+
+Enable postgis
+··············
+CREATE EXTENSION postgis;
+
+
+Create some examples
+
+INSERT INTO horus."TRACKS_DETAIL"
+( fk_track, creation, trackinfo, fk_type, binaryref)
+VALUES( 1, '2018-10-09 11:55:11.537', ST_GeomFromText('POINT (37.16817 -5.936831)',26910), 1, NULL);
+
+INSERT INTO horus."TRACKS_DETAIL"
+(fk_track, creation, trackinfo, fk_type, binaryref)
+VALUES( 1, '2018-10-09 11:55:11.537', ST_GeomFromText('POINT (37.166811 -5.940200)',26910), 1, NULL);
+
+
+INSERT INTO horus."TRACKS_DETAIL"
+(fk_track, creation, trackinfo, fk_type, binaryref)
+VALUES( 1, '2018-10-09 11:55:11.537', ST_GeomFromText('POINT (37.153765 -5.936344)',26910), 1, NULL);
+

@@ -1,0 +1,52 @@
+<bodyhead [icon]="'transfer_within_a_station'" [title]="'SEARCHES.HEADER.TITLE' | translate" [subtitle]="'SEARCHES.HEADER.SUBTITLE' | translate"></bodyhead>
+
+<div class="body">
+
+    <div>
+        <button *ngIf="currentUser.role=='ADMIN'" class="add" mat-mini-fab color="accent" matTooltip="{{'SEARCHES.BUTTON.ADD' | translate}}"
+            (click)="onCreate()">
+            <mat-icon class="menu-icon">add</mat-icon>
+        </button>
+        <mat-form-field class="filter">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{'SEARCHES.FILTER' | translate}}">
+        </mat-form-field>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="creation">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'SEARCHES.TABLE.CREATION' | translate}} </th>
+            <td mat-cell *matCellDef="let element">
+                <rowactions *ngIf="currentUser.role=='ADMIN'" [showMap]="true" (onDelete)="onDelete(element.sid)"
+                    (onShowQR)="showQR(element)" (onEdit)="onEdit(element.sid,element)" (onShowMap)="showMap(element)"></rowactions>
+                {{ element.creation | localizedDate }}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'SEARCHES.TABLE.NAME' | translate}} </th>
+            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'SEARCHES.TABLE.DESCRIPTION' | translate}} </th>
+            <td mat-cell *matCellDef="let element" matTooltip="{{element.description}}">{{element.description}}</td>
+        </ng-container>
+        <ng-container matColumnDef="location">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'SEARCHES.TABLE.LOCATION' | translate}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+        </ng-container>
+        <ng-container matColumnDef="tags">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'SEARCHES.TABLE.TAGS' | translate}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.tags}} </td>
+        </ng-container>
+        <ng-container matColumnDef="contactPhone">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'SEARCHES.TABLE.CONTACT' | translate}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.contactPhone}} </td>
+        </ng-container>
+        <ng-container matColumnDef="report">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'SEARCHES.TABLE.REPORT' | translate}} </th>
+            <td mat-cell *matCellDef="let element" matTooltip="{{element.report}}"> {{element.report}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

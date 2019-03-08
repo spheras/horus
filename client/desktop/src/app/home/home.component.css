@@ -1,0 +1,119 @@
+mat-sidenav-content {
+    margin-top: 55px;
+}
+
+mat-sidenav {
+    width: 245px;
+    height: 100%;
+    background: linear-gradient(to left, #77777769 0%, #0000001a 30%, #ffffff9e 100%), url(/assets/img/zwartevilt.png);
+}
+
+mat-list-item.submenu {
+    margin-left: 43px;
+    box-shadow: none;
+}
+
+mat-list-item.submenu.selected:after {
+    border-color: transparent transparent transparent #e9e9e9;
+}
+
+mat-list-item.submenu.selected:hover {
+    box-shadow: none;
+}
+
+navbar {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+}
+
+.menu-icon {
+    background: #4c7eea;
+    border-radius: 34px;
+    padding: 5px;
+    color: white;
+    margin-right: 10px;
+}
+
+.menu-icon.submenu {
+    background: rgb(255, 64, 129);
+}
+
+.selected .menu-icon {
+    background: rgb(255, 64, 129);
+}
+
+.menu-head {
+    padding: 10px;
+}
+
+.menu-head .picture {
+    font-size: 100px;
+    line-height: 100px;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    display: block;
+    border-radius: 100px;
+    opacity: 1;
+    padding: 5px;
+    background: #f9f9f9;
+    color: #4c7eea;
+}
+
+.menu-head .username {
+    text-align: center;
+    font-family: roboto;
+    font-weight: bold;
+    color: #4c7eea;
+}
+
+.menu-head .email {
+    text-align: center;
+    font-family: roboto;
+    color: #6d6d6d;
+    font-size: 14px;
+}
+
+.selected,
+.selected:hover {
+    background: linear-gradient(to left, #ffffff4d 0%, #ffffff 100%), url(/assets/img/stripes-light.png);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.selected:after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 0 23px 19px;
+    border-color: transparent transparent transparent #e9e9e9;
+    content: '';
+    right: -19px;
+    position: absolute;
+    margin-top: -48px;
+}
+
+.selected:before {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 26px 0 24px 19px;
+    border-color: transparent transparent transparent #a1a1a194;
+    content: '';
+    right: -20px;
+    position: absolute;
+    margin-top: -1px;
+}
+
+mat-sidenav {
+    overflow: unset;
+}
+
+mat-sidenav-content.map {
+    background: red;
+    top: 0px;
+    bottom: 0px;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+}

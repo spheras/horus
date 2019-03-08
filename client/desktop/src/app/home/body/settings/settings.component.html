@@ -1,0 +1,31 @@
+<bodyhead [icon]="'settings'" [title]="'SETTINGS.HEADER.TITLE' | translate" [subtitle]="'SETTINGS.HEADER.SUBTITLE' | translate"></bodyhead>
+
+<div class="body">
+    <form [formGroup]="settingsForm">
+        <mat-form-field>
+            <input matInput formControlName="publicHostName" placeholder="{{'SETTINGS.FIELD.PUBLICHOSTNAME' | translate}}"
+                name="publicHostName" required [ngClass]="{ 'is-invalid': submitted && f.publicHostName.errors }"
+                mt-autofocus [value]="settings.publicHostName">
+        </mat-form-field><br>
+        <mat-form-field>
+            <input matInput formControlName="publicPort" placeholder="{{'SETTINGS.FIELD.PUBLICPORT' | translate}}" name="publicPort"
+                type="number" required [ngClass]="{ 'is-invalid': submitted && f.publicPort.errors }" mt-autofocus
+                [value]="settings.publicPort">
+        </mat-form-field><br>
+
+        <div class="sslcontainer">
+            <mat-checkbox formControlName="ssl" name="ssl" [ngClass]="{ 'is-invalid': submitted && f.ssl.errors }"
+                [value]="settings.ssl">{{'SETTINGS.FIELD.SSL' | translate}}</mat-checkbox><br>
+            <span>{{'SETTINGS.FIELD.SSL_COMMENT' | translate}}</span>
+        </div>
+
+
+        <div *ngIf="currentUser.role==='ADMIN'" class="buttonContainer">
+            <button class="left" mat-stroked-button color="warn" (click)="save()">{{'SETTINGS.SAVE' | translate}}</button>
+            <button mat-stroked-button color="primary" class="right" (click)="cancel()" cdkFocusInitial>{{'SETTINGS.CANCEL'
+                | translate}}</button>
+        </div>
+
+
+    </form>
+</div>

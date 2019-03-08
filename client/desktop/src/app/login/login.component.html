@@ -1,0 +1,50 @@
+<div class="parent">
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-card class="logocard animated fadeInUp">
+            <mat-card-header>
+                <div class="logo"></div>
+            </mat-card-header>
+            <div class="headertext">Horus Login</div>
+            <mat-card-content>
+                <table cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <mat-icon class="prefix" matPrefix>account_circle</mat-icon>
+                                <span matPrefix>&nbsp; | &nbsp;</span>
+                                <input matInput formControlName="username" placeholder="{{'LOGIN.USERNAME' | translate}}"
+                                    name="username" required [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+                                    mt-autofocus>
+                            </mat-form-field>
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required">{{'LOGIN.REQUIRED.USERNAME' | translate}}</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <mat-icon class="prefix" matPrefix>vpn_key</mat-icon>
+                                <span matPrefix>&nbsp; | &nbsp;</span>
+                                <input matInput formControlName="password" placeholder="{{'LOGIN.PASSWORD' | translate}}"
+                                    type="password" name="password" required [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                            </mat-form-field>
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">{{'LOGIN.REQUIRED.PASSWORD' | translate}}</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+            </mat-card-content>
+            <mat-card-actions>
+                <span class="version">Horus v1.0</span>
+                <button [disabled]="loading" type="submit" class="loginbutton" mat-raised-button (click)="onSubmit()"
+                    color="primary">{{'LOGIN.LOGIN'
+                    | translate}}</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+
+</div>

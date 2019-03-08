@@ -1,0 +1,111 @@
+.logo {
+    width: 230px;
+    height: 55px;
+}
+
+.animation-delay-100 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+  
+.animation-delay-200 {
+-webkit-animation-delay: 0.2s;
+animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+    }
+
+    .animation-delay-400 {
+        -webkit-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+        }
+        
+.toolbar .logo .image {
+    float: left;
+    width: 60px;
+    height: 54px;
+    display: block;
+    background: url(/assets/img/horus.svg);
+    background-size: 69px;
+    margin-right: 20px;
+}
+
+.toolbar .productname {
+    float: left;
+    font-size: 1.5em;
+    margin-top: 23px;
+    color: #ffffff;
+    font-family: roboto;
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.8);
+    margin-left: -14px;
+    margin-right: 65px;
+    width: 30px;
+    display: block;
+}
+
+.mapbutton-container{
+    width: 200px;
+    height: 37px;
+    margin-left: 100px;
+}
+.mapbutton-container button:hover{
+    background: rgb(255, 64, 129);
+    color: white;
+}
+.mapbutton-container button{
+    border-radius: 22px;
+    overflow: hidden;
+    background: white;
+    color: rgb(255, 64, 129);;
+    margin-left: 20px;
+    box-shadow: 0px 0px 4px 4px rgba(255,255,255,0.3);
+}
+.mat-toolbar.mat-primary {
+    /*
+    background: #153477;
+    */
+    color: #fff;
+}
+
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+.mat-toolbar-multiple-rows {
+    min-height: 20px;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    height: 55px;
+}
+
+.flag {
+    width: 26px;
+    height: 20px;
+    background-size: 30px !important;
+    float: left;
+    margin-right: 10px;
+}
+
+.flag.es {
+    background: url(/assets/img/flags/es.svg);
+}
+
+.flag.en {
+    background: url(/assets/img/flags/gb.svg);
+}
+
+.flag.text {
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    height: 22px;
+    width: auto;
+    line-height: 20px;
+}

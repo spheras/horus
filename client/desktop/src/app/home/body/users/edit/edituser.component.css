@@ -1,0 +1,35 @@
+button {
+    width: 40%;
+}
+
+.button-filler {
+    width: 20%;
+}
+
+.icon {
+    float: right;
+    font-size: 39px;
+    margin-right: 20px;
+    color: #ff4081;
+}
+
+tr,
+td,
+table,
+tbody,
+mat-form-field {
+    display: block;
+}
+
+/*
+tr {
+    border-left: 10px solid #eaeaea;
+    margin-bottom: 3px;
+    margin-left: -10px;
+    padding-left: 10px;
+}*/
+
+mat-error {
+    margin-top: -13px;
+    font-size: 10px;
+}

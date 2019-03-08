@@ -1,0 +1,3 @@
+server.crt and server.key are both example files for a Horus certificate.
+Horus certificate is needed to stablish SSL connections.
+Please, replace these files with your valid certificates.

@@ -1,0 +1,32 @@
+{
+    "WELCOME.TITLE": "Bienvenido a Horus",
+    "WELCOME.TEXT1": "Mientras esta aplicación esté activa enviará todo el recorrido que usted realice a los servicios centrales para trazar la búsqueda que se esté realizando.",
+    "WELCOME.TEXT2": "Para empezar haga click en el botón siguiente y escanee el código del grupo al que pertenece.",
+    
+    "DIALOG.WAIT": "Por favor, espere...",
+
+    "HOME.GROUP":"Grupo",
+    "HOME.TEXT1":"A partir de este momento su dispositivo está sincronizando la posición para el GRUPO",
+    "HOME.EXIT.TITLE":"Confirmar Salir",
+    "HOME.EXIT.DESCRIPTION":"¿Esta seguro que desa finalizar la Búsqueda? Cuando finalice la búsqueda su dispositivo dejará de enviar datos al servicio",
+    "HOME.EXIT.CANCEL":"Cancelar",
+    "HOME.EXIT.EXIT":"Salir",
+    "HOME.ACTION.SENDPICTURE":"Enviar Foto",
+    "HOME.ACTION.SENDCOMMENT":"Enviar Comentario",
+    "HOME.ACTION.CALLBASE":"Llamar a Base",
+    "HOME.ACTION.ENDTRACKING":"Finalizar Búsqueda",
+    "HOME.DIALOG.PHONENUMBER.TITLE":"Número de Teléfono",
+    "HOME.DIALOG.PHONENUMBER.SUBTITLE":"Por favor, introduzca su número de teléfono. Es necesario para que la estación base pueda ponerse en contacto con usted en caso de necesidad.",
+    "HOME.DIALOG.PHONENUMBER.PLACEHOLDER":"Número de Teléfono",
+    "HOME.DIALOG.PHONENUMBER.CANCEL":"Cancelar",
+    "HOME.DIALOG.PHONENUMBER.OK":"Ok",
+    "HOME.DIALOG.PHOTO.COMMENTS.TITLE":"Descripción",
+    "HOME.DIALOG.PHOTO.COMMENTS.SUBTITLE":"Añade una descripción a la foto",
+    "HOME.DIALOG.PHOTO..COMMENTS.PLACEHOLDER":"Descripción de la Foto",
+    "HOME.DIALOG.PHOTO.COMMENTS.OK":"Ok",
+    "HOME.DIALOG.COMMENTS.TITLE":"Comentarios",
+    "HOME.DIALOG.COMMENTS.SUBTITLE":"Indique el comentario que desea enviar",
+    "HOME.DIALOG.COMMENTS.PLACEHOLDER":"Comentario",
+    "HOME.DIALOG.COMMENTS.OK":"Ok"
+
+}

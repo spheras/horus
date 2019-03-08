@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-form-field>
+        <mat-label>{{'LINKS.SELECTGROUP' | translate}}</mat-label>
+        <mat-select [value]="(groups.length>0?groups[0].name:'')" #selectedGroup (selectionChange)="onGroupChange($event)">
+            <mat-option *ngFor="let group of groups" [value]="group">{{group.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</mat-card>
+
+<mat-card class="listcard">
+    <mat-label class="listlabel">{{'LINKS.SELECTAREA' | translate}} {{(selectedGroup.value?selectedGroup.value.name:'')}}</mat-label>
+    <mat-divider></mat-divider>
+    <mat-selection-list role="list" [(ngModel)]="selectedOptions">
+        <mat-list-option *ngFor="let area of areas" role="listitem" [value]="area.sid">{{area.name}}</mat-list-option>
+    </mat-selection-list>
+</mat-card>

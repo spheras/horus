@@ -1,0 +1,50 @@
+<mat-toolbar class="toolbar animated fadeInDown mat-elevation-z4" color="primary">
+    <mat-toolbar-row>
+        <div class="logo">
+            <div class="image animated fadeIn delay-1s"></div>
+            <span class="productname animated fadeIn delay-1s">Horus</span>
+        </div>
+        <button mat-icon-button (click)="showHideSideNav()" matTooltip="{{'NAVBAR.SIDEMENU.TOOLTIP' | translate}}">
+            <mat-icon aria-label="Show/Hider Left Menu">menu</mat-icon>
+        </button>
+
+        <div *ngIf="selected=='map'" class="mapbutton-container">
+            <button mat-icon-button class="animated fadeInDown" (click)="map.showQR()" matTooltip="{{'NAVBAR.SHOWQR.TOOLTIP' | translate}}"> 
+                <mat-icon aria-label="Show/Hider Left Menu">gradient</mat-icon>
+            </button>
+            <button mat-icon-button  class="animated fadeInDown animation-delay-100" (click)="map.addAreasLayer()" matTooltip="{{'NAVBAR.ADDAREASLAYER.TOOLTIP' | translate}}"> 
+                <mat-icon aria-label="Show/Hider Left Menu">language</mat-icon>
+            </button>
+            <button mat-icon-button class="animated fadeInDown animation-delay-200" (click)="map.editTracks()" matTooltip="{{'NAVBAR.EDITTRACKS.TOOLTIP' | translate}}"> 
+                <mat-icon aria-label="Show/Hider Left Menu">phonelink_setup</mat-icon>
+            </button>
+        </div>
+
+        <span class="fill-remaining-space"></span>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="{{'NAVBAR.LANGUAGE.TOOLTIP' | translate}}">
+            <mat-icon aria-label="Change Language">flag</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="fullscreen()" matTooltip="{{'NAVBAR.FULLSCREEN.TOOLTIP' | translate}}">
+            <mat-icon *ngIf="flagFullScreen" aria-label="fullscreen">fullscreen_exit</mat-icon>
+            <mat-icon *ngIf="!flagFullScreen" aria-label="fullscreen">fullscreen</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="logout()" matTooltip="{{'NAVBAR.LOGOUT.TOOLTIP' | translate}}">
+            <mat-icon aria-label="Exit User">power_settings_new</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu" class="flagMenu">
+            <button mat-menu-item (click)="changeLang('es')">
+                <div class="flag es"></div>
+                <span class="flag text">Español</span>
+            </button>
+            <button mat-menu-item (click)="changeLang('en')">
+                <div class="flag en"></div>
+                <span class="flag text">English</span>
+            </button>
+        </mat-menu>
+
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,51 @@
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+body {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background: #fafafa;
+}
+
+.logocard .mat-card-header-text {
+    display: none;
+}
+
+/** angular material - theming colors */
+
+.mat-toolbar.mat-primary {
+    background: #153477 !important;
+    color: #fff;
+}
+
+.mat-fab.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary {
+    background-color: #153477;
+}
+
+.mat-sort-header-button {
+    font-size: 1.3em !important;
+    color: #ffffff !important;
+}
+
+th.mat-header-cell {
+    background: #4c7eea;
+}
+
+.mat-sort-header-arrow {
+    color: #f8faff;
+}
+
+tr.mat-row:hover {
+    background: whitesmoke;
+}
+
+.cdk-overlay-dark-backdrop {
+    background: rgba(0,0,0,.4);
+}
