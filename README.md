@@ -49,6 +49,18 @@ From a __technological__ perspective:
 
 ## Architecture
 
+The application is divided in three main components: two frontends (desktop and mobile) and a backend.
+
+![Horus Basic Components](https://raw.githubusercontent.com/spheras/horus/master/etc/readme_assets/components1.png)
+
+The __backend__ is the responsible to retrieve and save information into the database (spatial database) with some minor logic about how to store and retrieve the information mainly. This module provide the REST services to perform all those actions. 
+
+Moreover, the application provide two different __frontends__. On one hand we have the desktop frontend, which is the most relevant in terms of administration, thus it is the the way the user can manage Searches, and analyze in real time all the information incoming to the application.  On the other hand there is a mobile frontend which provide the real time track information to the platform. Those devices are the reponsibles to send the track data to the platform, giving also to the user the oportunity to send other information like pictures, comments, alarms and others regarding a certain position.
+
+![Horus Physical Components](https://raw.githubusercontent.com/spheras/horus/master/etc/readme_assets/components2.png)
+
+Technologically speaking
+
 ## Building and Installing
 
 ## Contributing
