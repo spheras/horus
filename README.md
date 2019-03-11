@@ -51,7 +51,8 @@ From a __technological__ perspective:
 
 The application is divided in three main components: two frontends (desktop and mobile) and a backend.
 
-![Horus Basic Components](https://raw.githubusercontent.com/spheras/horus/master/etc/readme_assets/components1.png)
+<img alt="Horus Basic Components" src="https://raw.githubusercontent.com/spheras/horus/master/etc/readme_assets/components.png" width="600" height="600">
+![Horus Basic Components](https://raw.githubusercontent.com/spheras/horus/master/etc/readme_assets/components.png)
 
 The __backend__ is the responsible to retrieve and save information into the database (spatial database) with some minor logic about how to store and retrieve the information mainly. This module provide the REST services to perform all those actions. 
 
