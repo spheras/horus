@@ -23,7 +23,7 @@ export class EditSearchComponent implements OnInit {
     originalSearch: Search = null;
     currentUser: any;
     //wgs84 regex, i.e. 37.417625, -6.014928
-    latlongRegex = /^(?<lat>(-?(90|(\d|[1-8]\d)(\.\d{1,6}){0,1})))\,{1}\s?(?<long>(-?(180|(\d|\d\d|1[0-7]\d)(\.\d{1,6}){0,1})))$/
+    latlongRegex = new RegExp('^(?<lat>(-?(90|(\d|[1-8]\d)(\.\d{1,6}){0,1})))\,{1}\s?(?<long>(-?(180|(\d|\d\d|1[0-7]\d)(\.\d{1,6}){0,1})))$/');
 
     @ViewChild("groupsection") groupSection: GroupSectionComponent;
     @ViewChild("areasection") areaSection: AreaSectionComponent;
