@@ -2,6 +2,8 @@
 
 Horus Desktop is an angular application to manage searches and perform forensic and real time analysis of the tracking data.  This application need to connect to the server services to work properly.
 
+![Login Screenshot](https://raw.githubusercontent.com/spheras/horus/master/client/desktop/etc/readme_assets/login.png)
+
 ## Development server
 
 Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
