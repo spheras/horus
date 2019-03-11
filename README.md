@@ -73,9 +73,9 @@ There are 3 projects inside this project:
 1. The Desktop Project (angular)
 3. The Mobile Project (ionic)
 
-The server project is a NodeJS project, which is at the `horus/server/` path. Go there and you'll see more instructions to build completely the project.
+The server project is a NodeJS project, which is at the [`horus/server/`](https://github.com/spheras/horus/tree/master/server) path. Go there and you'll see more instructions to build completely the project.
 
-The Desktop and Mobile are inside the `horus/client/` folder. Desktop is the web angular application `horus/client/desktop/`, which is designed to manage the searches and perform analysis in realtime of the tracking data. On the other hand, the Mobile `horus/client/mobile/` is an Ionic application which is able to track information from smart devices and send those info to the server.  In each case, go there and you'll see more info about the building and installation.
+The Desktop and Mobile are inside the `horus/client/` folder. Desktop is the web angular application [`horus/client/desktop/`](https://github.com/spheras/horus/tree/master/client/desktop), which is designed to manage the searches and perform analysis in realtime of the tracking data. On the other hand, the Mobile [`horus/client/mobile/`](https://github.com/spheras/horus/tree/master/client/mobile) is an Ionic application which is able to track information from smart devices and send those info to the server.  In each case, go there and you'll see more info about the building and installation.
 
 ## Contributing
 
@@ -88,4 +88,4 @@ We are at the moment in a delicated phase, just adjusting and testing some final
 
 or just put [there an issue](https://github.com/spheras/horus/issues)
 
-You can allways clone and try to pull a new feature/fix, but would be a best aproximation if you first talk with us about it to find the best way to solve the problem.
+You can allways clone and try to send a pull request for a new feature/bugfix, but would be a best aproximation if you first talk with us about it, and find the best way to solve the problem.
