@@ -59,8 +59,33 @@ Moreover, the application provide two different __frontends__. On one hand we ha
 
 ![Horus Physical Components](https://raw.githubusercontent.com/spheras/horus/master/etc/readme_assets/components2.png)
 
-Technologically speaking
+Technologically speaking, in a more detailed way, the application try to set the same base technology (javascript/nodejs) as a core language, trying to minimize a polyglot environment as much as possible. The following figure describe the main technologies used in each component.
+
+![Architecture](https://raw.githubusercontent.com/spheras/horus/master/etc/readme_assets/architecture.png)
 
 ## Building and Installing
 
+By the moment, the application is still in development, very near from an alpha stage. We can't offer yet a release, so you'll need to build and install by yourself. Anyway, if your intention is to collaborate with us (as developer or testing, don't doubt to contact us (see contributing section below).
+
+There are 3 projects inside this project:
+
+1. The Server Project (nodejs)
+1. The Desktop Project (angular)
+3. The Mobile Project (ionic)
+
+The server project is a NodeJS project, which is at the [`horus/server/`](https://github.com/spheras/horus/tree/master/server) path. Go there and you'll see more instructions to build completely the project.
+
+The Desktop and Mobile are inside the `horus/client/` folder. Desktop is the web angular application [`horus/client/desktop/`](https://github.com/spheras/horus/tree/master/client/desktop), which is designed to manage the searches and perform analysis in realtime of the tracking data. On the other hand, the Mobile [`horus/client/mobile/`](https://github.com/spheras/horus/tree/master/client/mobile) is an Ionic application which is able to track information from smart devices and send those info to the server.  In each case, go there and you'll see more info about the building and installation.
+
 ## Contributing
+
+We are at the moment in a delicated phase, just adjusting and testing some final features of the application to release a first __Horus 1.0 version__.  If you are interested to collaborate with us (or just to say hello and invite us a beer) as a developer or testing don't doubt to contact us (english or spanish) at:
+
+[@hesterfie](mailto:hesterfie@gmail.com) Raúl Caballero Moreno
+
+[@spheras](mailto:joseamuedo@gmail.com) José Amuedo Salmerón
+
+
+or just put [there an issue](https://github.com/spheras/horus/issues)
+
+You can allways clone and try to send a pull request for a new feature/bugfix, but would be a best aproximation if you first talk with us about it, and find the best way to solve the problem.
