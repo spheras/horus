@@ -52,5 +52,11 @@ Don't forget to enable the postgis extension for the schema:
 CREATE EXTENSION postgis;
 ```
 
+## Launch Server
 
+In order to launch the server you will need to run:
+
+```
+npm run dev
+```
 
