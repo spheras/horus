@@ -7,40 +7,42 @@ Horus Mobile is an [IONIC](https://ionicframework.com/) application to be deploy
 ## HOWTO
 
 ### CREATE PLATFORMS
+```
 ionic cordova platform add browser
 ionic cordova platform add android
-
+```
 
 ### DEBUG FROM BROWSER
+```
 ionic serve (after loading web from: localhost:8100)
 ionic serve --lab   (after loading web from: localhost:8100/ionic-lab)
-
+```
 
 ### COMPILE BROWSER
+```
 ionic cordova build browser --prod --release
-
+```
 ### COMPILE ANDROID
   1. make sure your path is setting the jdk bin folder (or add it)
-          export PATH=$PATH:/whateverfolderisyourJDK/bin
+```          export PATH=$PATH:/whateverfolderisyourJDK/bin```
   2. make sure your android home is setting the nadroid-sdk folder (or add it)
-          export ANDROID_HOME=/whateverfolderisyourAndroid-sdk
+```          export ANDROID_HOME=/whateverfolderisyourAndroid-sdk```
 
 (if necessary modify from config.xml the android-versionCode and version parameters)
-
-ionic cordova build android --prod --release
+```ionic cordova build android --prod --release```
 
   3. if you get an error like this:
 Error: Could not find gradle wrapper within Android SDK. Might need to update your Android SDK.
-Looked here: /whateverfolderisyourAndroiSDKFolder/tools/templates/gradle/wrapper
+Looked here: `/whateverfolderisyourAndroiSDKFolder/tools/templates/gradle/wrapper`
     we need to wait a cordova bugfix for this and recent android sdk versions.. 
     until then I've copied an old sdk 'templates' folder onto the new tools folder
 
-the unsigned apk will be at the /platforms/android/app/build/outputs/apk/ folder
+the unsigned apk will be at the `/platforms/android/app/build/outputs/apk/ folder`
 
 ### DEPLOY & DEBUG IN ANDROID
-ionic cordova run android
+```ionic cordova run android```
 
 
 ### LIST CONNECTED DEVICES
-adb devices
+```adb devices```
 
