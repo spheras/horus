@@ -364,7 +364,7 @@ export class MapComponent implements OnInit, AfterViewInit {
 
     if (this.search.initialPlanningPoint != null){ //JOSE revisar condicion ¿habria que incluir undufined?
       let IconoPPI = new L.Icon({iconUrl: 'src/assets/img/PPI.svg', iconSize: [30, 30]});
-      let puntoPPI = JSON.parse(this.search.lastPointSighting)
+      let puntoPPI = JSON.parse(this.search.initialPlanningPoint)
       let markerPPI = new L.Marker(puntoPPI.coordinates, {icon: IconoPPI, riseOnHover: true});
       //markerPPI.addTo(this.mymap);
       this.controlLayer.addOverlay(markerPPI, "PPI",  {groupName : "Puntos Singulares"});  
@@ -372,7 +372,7 @@ export class MapComponent implements OnInit, AfterViewInit {
     
     if (this.search.locationPointMissingPerson != null){ //JOSE revisar condicion ¿habria que incluir undufined?
       let IconoPLD = new L.Icon({iconUrl: 'src/assets/img/PLD.svg', iconSize: [30, 30]});
-      let puntoPLD = JSON.parse(this.search.lastPointSighting)
+      let puntoPLD = JSON.parse(this.search.locationPointMissingPerson)
       let markerPLD = new L.Marker(puntoPLD.coordinates, {icon: IconoPLD, riseOnHover: true});
       //markerPLD.addTo(this.mymap);
       this.controlLayer.addOverlay(markerPLD, "PLD",  {groupName : "Puntos Singulares"});  
